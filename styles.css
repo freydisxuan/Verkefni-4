@@ -26,6 +26,37 @@ html {
   width: 1px;
 }
 
+/* Leturgerðir */
+
+/** Hér skal skilgreina leturgerðir **/
+
+/* Stillingar */
+
+:root {
+  /* Grunn bilið okkar er 1rem == 16px */
+  --font-base-body-px: 16px;
+  --spacing: 1rem;
+
+  /* Hámarksbreidd á efni */
+  --max-width: 900px;
+
+  /* Border breiddir */
+  --border-small: 1px;
+  --border-large: 8px;
+  --border-radius: 6px;
+
+  /* Litir */
+  --color-gold: #ffe7ae;
+  --color-gold-light: #fff1cf;
+  --color-dark: #2f0505;
+  --color-light: #fff9ee;
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  --font-family-base: 'Noto Sans Display', Helvetica, Arial, sans-serif;
+  --font-family-heading: 'Lora', Georgia, serif;
+}
+
 /*** Almennt ***/
 
 html,
@@ -52,7 +83,7 @@ img {
 
 /*** Haus ***/
 
-body > header {
+.header {
   padding: 1rem;
   border-bottom: 8px solid #ffe7ae;
 
@@ -60,6 +91,13 @@ body > header {
   color: #fff1cf;
 
   text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--spacing);
 }
 
 /*** Valmynd ***/
@@ -84,7 +122,7 @@ nav ul li {
 
 /*** Meginmál ***/
 
-main {
+.main {
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -93,7 +131,7 @@ main {
 
 /*** Fótur ***/
 
-footer {
+.footer {
   margin-top: 1rem;
   padding: 1rem;
   border-top: 8px solid #ffe7ae;
@@ -117,23 +155,39 @@ footer ul {
 /*** Box! ***/
 
 .boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #ffe7ae;
+  border-bottom: 2px solid var(--color-gold);
 }
 
 .boxes .box {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-gold-light);
+  justify-content: space-between;
 
   margin-bottom: 1rem;
-  margin-right: 1%;
-  width: 48%;
+  width: 49%;
+}
 
-  vertical-align: top;
+.boxes .box .buttons {
+display: flex;
+flex: 0;
+margin-bottom: 1rem;
+}
+
+.boxes .box .p {
+display: flex;
+flex:1;
 }
 
 .boxes .box a {
-  display: block;
+  
   margin-top: 1rem;
   font-weight: bold;
 }
