@@ -64,17 +64,24 @@ input,
 select,
 button {
   font-size: 16px;
-  font-family: 'Lora', serif;
+  font-family: var(--font-family-base);
 }
+
 
 a {
   color: inherit;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-heading);
+}
+
 h2,
 h3,
 section {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
 }
 
 img {
@@ -84,11 +91,10 @@ img {
 /*** Haus ***/
 
 .header {
-  padding: 1rem;
-  border-bottom: 8px solid #ffe7ae;
+  padding: var(--spacing);
 
-  background-color: #2f0505;
-  color: #fff1cf;
+  background-color: var(--color-dark);
+  color: var(--color-gold-light);
 
   text-align: center;
 }
@@ -96,58 +102,69 @@ img {
 .wrapper {
   display: flex;
   flex-direction: column;
+}
 
-  gap: var(--spacing);
+img {
+  display: flex;
+  max-width: 400px;
+  object-fit: cover;
+  object-position: top center;
 }
 
 /*** Valmynd ***/
 
 nav {
-  margin-bottom: 1rem;
-  padding: 1rem;
+  border-bottom: var(--border-large) solid var(--color-gold);
+  margin-bottom: var(--spacing);
+  padding: var(--spacing);
 
-  background-color: #fff9ee;
-  color: #2f0505;
+  background-color: var(--color-light);
+  color: var(--color-dark);
 }
 
 nav ul {
   list-style: none;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline-block;
-  margin-right: 1rem;
+  margin-right: var(--spacing);
 }
 
 /*** Meginmál ***/
 
 .main {
   margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 900px;
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
+  max-width: var(--max-width);
 }
+
 
 /*** Fótur ***/
 
 .footer {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-top: 8px solid #ffe7ae;
+  margin-top: var(--spacing);
+  padding: var(--spacing);
+  border-top: var(--border-large) solid var(--color-gold);
 
-  background-color: #2f0505;
-  color: #fff1cf;
+  background-color: var(--color-dark);
+  color: var(--color-gold-light);
 
   text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
-footer > section {
-  display: inline-block;
-  vertical-align: top;
+.footer section {
+  flex-wrap: wrap;
 }
 
-footer ul {
+.footer ul {
   list-style: none;
   text-align: center;
 }
@@ -161,24 +178,26 @@ footer ul {
   gap: var(--spacing);
 
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: var(--spacing);
+  
 }
 
 .boxes .box {
   display: flex;
   flex-direction: column;
   background-color: var(--color-gold-light);
-  justify-content: space-between;
 
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
   width: 49%;
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
 }
+
 
 .boxes .box .buttons {
 display: flex;
 flex: 0;
-margin-bottom: 1rem;
+margin-bottom: var(--spacing);
 }
 
 .boxes .box .p {
@@ -188,8 +207,20 @@ flex:1;
 
 .boxes .box a {
   
-  margin-top: 1rem;
+  margin-top: var(--spacing);
   font-weight: bold;
+}
+
+.boxes .box .box-title {
+  border-bottom: 2px var(--color-dark) solid;
+}
+
+.boxes .box-border {
+  border: 2px solid var(--color-dark);
+}
+
+.boxes .box .title{
+  padding-top: var(--spacing);
 }
 
 /*** Opnunartími ***/
@@ -199,13 +230,13 @@ dt {
 }
 
 dd {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
 }
 
 /*** Matseðill ***/
 
 table {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
   border-spacing: 0;
 }
 
@@ -215,15 +246,15 @@ table td {
 }
 
 table tbody tr:nth-child(2n + 1) {
-  background-color: #ffe7ae;
+  background-color: var(--color-gold);
 }
 
 /*** Pöntunarform ***/
 
 fieldset {
-  margin-bottom: 1rem;
-  border: 1px solid #ffe7ae;
-  padding: 1rem;
+  margin-bottom: var(--spacing);
+  border: var(--border-small) solid var(--color-gold);
+  padding: var(--spacing);
 }
 
 fieldset legend {
@@ -231,11 +262,11 @@ fieldset legend {
 }
 
 fieldset div {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
 }
 
 fieldset div label {
-  display: block;
+  display: flex;
 }
 
 fieldset input,
@@ -245,7 +276,7 @@ fieldset textarea {
 }
 
 fieldset input[type='checkbox'] {
-  display: inline-block;
+  display: flex;
   margin-right: 0.5rem;
 }
 
