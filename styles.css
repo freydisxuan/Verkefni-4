@@ -284,3 +284,7 @@ form button {
   padding: 0.25rem;
   border-radius: 6px;
 }
+
+form select {
+  background-color:#EFEFEF;
+}
